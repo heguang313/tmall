@@ -25,12 +25,12 @@ $(function(){
 				 		index = 0;
 				 	}
 				 	start();
-				 },3000)
+				 },3000)//设置计时器
 			}
 
 			/*轮播停止函数*/
 			function stop () {
-				clearTimeout(timer);
+				clearTimeout(timer);//清除计时器
 			}
 			 
 			/*图片切换函数*/
@@ -44,12 +44,12 @@ $(function(){
 				$oLi.each(function(){
 					var that = $(this);
 					var $index = that.index();
-					that.attr('index',$index);
+					that.attr('index',$index);//为当前对象创建index属性
 					$oLi.on('mouseover',function(){
 						if ($inner.is(':animated')) {
 							return;
 						}
-						var myIndex = parseInt($(this).attr('index'));
+						var myIndex = parseInt($(this).attr('index'));//获取index属性值
 						fade(myIndex);
 						index = myIndex;
 					})
@@ -59,22 +59,22 @@ $(function(){
 
 	/*==========================循环滚动字幕==========================*/
 	(function marquee () {
-				var timer = null;
+				var timer = null;//初始化变量
 				timer = setTimeout(function () {
-					var $scroll = $('.scroll');
+					var $scroll = $('.scroll');//获取目标对象
 					$scroll.each(function () {
 						var $p = $(this).find('p'),
 						    $target = $p.eq(0),
-						    $height = $target.height(),
-						    $clone = $target.clone(),
-						    $top = $target.css('marginTop');
+						    $height = $target.height(),//获取第一部分高度
+						    $clone = $target.clone(),//复制第一部分
+						    $top = $target.css('marginTop');//获取第一部分的marginTop属性
 					    if (!$top) {
 					    	$target.marginTop(0);
 					    }else{
 				    	    $target.animate({marginTop: '-='+$height},'normal',function(){
 				    	    	$clone.appendTo($scroll);
 				    	    	$target.remove();
-				    		});
+				    		});//改变第一部分的marginTop,把复制的内容插入到父元素的最后，再移除第一部分
 					    }
 					})
 					marquee();
@@ -169,7 +169,6 @@ $(function(){
 				}
 			})
 			var $currentLink = $oLi.find('.click');
-			console.log($currentLink);
 			if (currentId && $currentLink.attr('href')!=currentId) {
 				$currentLink.removeClass('click');
 				$oLi.find('[href='+currentId+']').addClass('click');
@@ -178,7 +177,67 @@ $(function(){
 	})()
 
 	/*==========================瀑布流效果==========================*/
-	(function fallWater () {
-		
-	})()
+	$(window).load(waterFall);
+	function waterFall () {
+		var dataInt = {"data":
+					    [{"dataIn":
+					    	[{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]}]
+					    },{"dataIn":
+					    	[{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]}]
+					    },{"dataIn":
+					    	[{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]}]
+					    },{"dataIn":
+					    	[{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]},
+					    	{"item":[{"src":"TB1Dqs9KpXXXXa6XXXXYXGcGpXX_M2.SS2.jpg"},{"p":"[热销]志霞奥迪汽车车衣 A4L A6L<br> TT A3 A5 A7A8L Q3Q5Q7专用铝膜"},{"price_front":"¥ 118"},{"price_behind":".0"}]}]
+					    }]
+					};  
+		var i = 0;
+		$(window).scroll(function(){
+			if (conditionCheck()) {
+				i++;
+				if (i<4) {
+					addNew(i);
+				}else{
+					return false;
+				}
+			}
+		});
+		function addNew (i) {
+	  		var $ul = $('<ul></ul>');
+	  		var $level1 = dataInt.data[i];//获取数据
+	  		for(var j=0;j<5;j++){
+	  			var $level2 = $level1.dataIn[j];
+				var $p = $('<p></p>').html($level2.item[1].p);//创建p元素并插入数据
+				var $span1 = $('<span></span>').html($level2.item[2].price_front);//创建span元素并插入数据
+				var $span2 = $('<span></span>').html($level2.item[3].price_behind);//创建span元素并插入数据
+				var $div = $('<div></div>').addClass('description').append($p).append($span1).append($span2);//创建div元素并插入数据
+				var $img = $('<img>').attr('src','images/' + $level2.item[0].src);//创建img元素并插入数据
+				var $a = $('<a></a>').append($img).append($div);//创建a元素并插入数据
+				var $li = $('<li></li>').addClass('box_md').append($a);//创建li元素并插入数据
+				$ul.append($li);
+	  		}
+	  		$('.content_box_j .box_group').append($ul);
+		}
+	}
+	function conditionCheck () {
+		var $lastOne = $('.content_box_j ul').last();//获取最后一个ul元素
+		var changH = $lastOne.offset().top + $lastOne.outerHeight()/2;//计算动作临界高度
+		var nowH = $(window).height() + $(window).scrollTop();//计算实时高度
+		return nowH>changH?true:false;
+	}
 })
