@@ -895,7 +895,6 @@ body{
         .bg_color(@color){
             background: @color;
             width: @con_width;
-            position: relative;
             .main{
                 display: block;
                 margin: 0 auto;
@@ -903,6 +902,8 @@ body{
             }
         }   
             .item{
+                height: 500px;
+                position: relative;
                 .sm_box{
                     display: block;
                     position: absolute;
@@ -1809,6 +1810,7 @@ body{
         line-height: 35px;
         background: #494949;
         position: absolute;
+        display: none;
         left: -120px;
         top: 0;
         z-index: 1000;

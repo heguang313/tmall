@@ -1062,6 +1062,10 @@ body {
   display: block;
   text-align: center;
 }
+#content .carousel .item {
+  height: 500px;
+  position: relative;
+}
 #content .carousel .item .sm_box {
   display: block;
   position: absolute;
@@ -1081,7 +1085,6 @@ body {
   float: left;
   background: #ffa800;
   width: 1314px;
-  position: relative;
   z-index: 1;
 }
 #content .carousel .item_1 .main {
@@ -1093,7 +1096,6 @@ body {
   float: left;
   background: #e8e8e8;
   width: 1314px;
-  position: relative;
 }
 #content .carousel .item_2 .main {
   display: block;
@@ -1104,7 +1106,6 @@ body {
   float: left;
   background: #2a2a2a;
   width: 1314px;
-  position: relative;
 }
 #content .carousel .item_3 .main {
   display: block;
@@ -1115,7 +1116,6 @@ body {
   float: left;
   background: #e8e8e8;
   width: 1314px;
-  position: relative;
 }
 #content .carousel .item_4 .main {
   display: block;
@@ -1126,7 +1126,6 @@ body {
   float: left;
   background: #ffd7ff;
   width: 1314px;
-  position: relative;
 }
 #content .carousel .item_5 .main {
   display: block;
@@ -1137,7 +1136,6 @@ body {
   float: left;
   background: #30befe;
   width: 1314px;
-  position: relative;
 }
 #content .carousel .item_6 .main {
   display: block;
@@ -2947,6 +2945,7 @@ body {
   line-height: 35px;
   background: #494949;
   position: absolute;
+  display: none;
   left: -120px;
   top: 0;
   z-index: 1000;
