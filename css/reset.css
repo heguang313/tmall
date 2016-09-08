@@ -1,0 +1,11 @@
+@charset"utf-8";
+
+body,ul,ol,dl,dt,dd,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,input,button,form{margin:0;padding:0;border:0;} 
+body{background:#fff;font-size:12px;font-family:"SimSun","宋体","Arial Narrow";} 
+ 
+ul,ol{list-style-type:none;} 
+select,input,img,select{vertical-align:middle;} 
+input,button{border: none;}
+ 
+a{text-decoration:none;color: #656565;} 
+a:hover,a:focus,a:active{text-decoration: underline;}
